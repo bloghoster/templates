@@ -51,5 +51,15 @@ template will display the title of each of your entries.
   - `<%RecentEntryTitle%>` - Recent Entry's title.
   - `<%RecentEntryDate%>` - Recent Entry's date.
   - `<%RecentEntryTime%>` - Recent Entry's time.
-
-    <Entry> </Entry> - Displays this weblog's entries.
+- `<Entry> </Entry>` - Displays this weblog's entries.
+  - `<%EntryTitle%>` - Entry title.
+  - `<%EntryAuthor%>` - Author's username.
+  - `<%EntryAuthorAvatar%>` - Author's avatar URL.
+  - `<%EntryAuthorURL%>` - Author's profile URL.
+  - `<%EntryDate%>` - Entry date.
+  - `<%EntryTime%>` - Entry time.
+  - `<%EntryBody%>` - Entry main content.
+  - `<%EntryURL%>` - Entry permanent URL.
+  - `<SendThisLink> </SendThisLink>` - Entry "Send This Link" URL.
+  - `<IfCategoriesAllowed> </IfCategoriesAllowed>` - Contents will only display if the administrator has enabled entry categories.
+    - `<%EntryCategory%>` - Entry category.
