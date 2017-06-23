@@ -63,3 +63,8 @@ template will display the title of each of your entries.
   - `<SendThisLink> </SendThisLink>` - Entry "Send This Link" URL.
   - `<IfCategoriesAllowed> </IfCategoriesAllowed>` - Contents will only display if the administrator has enabled entry categories.
     - `<%EntryCategory%>` - Entry category.
+  - `<IfCommentsAllowed> </IfCommentsAllowed>` - Contents will only display if comments are allowed on this entry.
+    - `<IfCommentPostAllowed> </IfCommentPostAllowed>` - Contents will only display if the viewer is allowed to post comments on this entry.
+    - `<%CommentPostURL%>` - "Post Comment" URL.
+    - `<%EntryCommentCount%>` - Number of comments on this entry.
+    - `<Comment> </Comment>` - Displays the comments on this entry.
