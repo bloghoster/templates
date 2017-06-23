@@ -1,4 +1,4 @@
-# templates
+# Templates
 Here is weblog templates for BeeBlog.org
 
 ## Tags & Templates Guide
@@ -18,3 +18,38 @@ template will display the title of each of your entries.
 ## Tags & Variables List
 
 `<%WindowTitle%>` - Weblog title and current page title.
+- `<%Title%>` - Weblog title.
+- `<%Description%>` - Weblog description.
+- `<%Avatar%>` - Weblog owner's avatar URL.
+- `<%Email%>` - Weblog owner's email address.
+- `<%Calendar%>` - The blog's calendar.
+- `<%MainPageURL%>` - Weblog's main page URL.
+- `<%ProfileURL%>` - Weblog owner's profile URL.
+- `<%ArchiveURL%>` - Weblog's archive page URL.
+- `<%FriendsPageURL%>` - Weblog's friends page URL.
+- `<%SiteFeedURL%>` - Weblog's RSS feed URL.
+- `<%AlbumURL%>` - Photo Album URL
+- `<%PodcastURL%>` - Podcast Feed URL
+- `<IfMainPage> </IfMainPage>` - Contents only display on the main page.
+- `<IfEntryPage> </IfEntryPage>` - Contents only display on the view entry page.
+- `<IfArchivePage> </IfArchivePage>` - Contents will only display on the archive page.
+  - `<%ArchiveInfo%>` - Weblog's archive list.
+- `<IfFriendsPage> </IfFriendsPage>` - Contents will only display on the friends page.
+- `<Link> </Link>` - Displays your weblog's custom links.
+  - `<%LinkTitle%>` - Link title.
+  - `<%LinkURL%>` - Link URL.
+- `<Friends> </Friends>` - Displays your list of friends.
+  - `<%FriendUsername%>` - Friend's username.
+  - `<%FriendURL%>` - Friend's weblog URL.
+- `<Members></Members>` - Displays the list of members for this weblog.
+  - `<%MemberUsername%>` - Member's username.
+  - `<%MemberURL%>` - Member's profile URL.
+- `<Categories> </Categories>` - Displays this weblog's entry categories.
+  - `<%Category%>` - Category name.
+  - `<%CategoryURL%>` - Category URL.
+- `<RecentEntry> </RecentEntry>` - Displays a list of your recent entries.
+  - `<%RecentEntryTitle%>` - Recent Entry's title.
+  - `<%RecentEntryDate%>` - Recent Entry's date.
+  - `<%RecentEntryTime%>` - Recent Entry's time.
+
+    <Entry> </Entry> - Displays this weblog's entries.
