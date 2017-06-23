@@ -17,9 +17,9 @@ template will display the title of each of your entries.
 
 ## Tags & Variables List
 
-- `<%WindowTitle%>` - Weblog title and current page title.
-- `<%Title%>` - Weblog title.
-- `<%Description%>` - Weblog description.
+- `<%WindowTitle%>` - Weblog title and current page title. This tag will output the title of your weblog along with the page that you are viewing. It can be used anywhere in your template, though it is specifically designed to maximize searchability when used between the `<title></title>` tags.
+- `<%Title%>` - Weblog title. This tag will output the title of your weblog, which you specify in your Profile. You can use this anywhere on your template.
+- `<%Description%>` - Weblog description. This tag will output a brief description of your weblog, which you specify in your Profile.
 - `<%Avatar%>` - Weblog owner's avatar URL.
 - `<%Email%>` - Weblog owner's email address.
 - `<%Calendar%>` - The blog's calendar.
