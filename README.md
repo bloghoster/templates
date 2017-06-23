@@ -68,3 +68,30 @@ template will display the title of each of your entries.
     - `<%CommentPostURL%>` - "Post Comment" URL.
     - `<%EntryCommentCount%>` - Number of comments on this entry.
     - `<Comment> </Comment>` - Displays the comments on this entry.
+      - `<CommentEdit> </CommentEdit>` - Edit Comment link.
+      - `<CommentDelete> </CommentDelete>` - Delete Comment link.
+      - `<%CommentTitle%>` - Comment title.
+      - `<%CommentAuthor%>` - Comment's author username/nickname.
+      - `<%CommentAuthorAvatar%>` - Comment's author avatar.
+      - `<%CommentAuthorIP%>` - Comment's author IP address.
+      - `<%CommentDate%>` - Comment date.
+      - `<%CommentTime%>` - Comment time.
+      - `<%CommentBody%>` - Comment's main content.
+      - `<%CommentURL%>` - Comment's permanent URL.
+  - `<IfTrackbacksAllowed> </IfTrackbacksAllowed>` - Contents will only display if trackbacks are allowed on this entry.
+    - `<%EntryTrackbackURL%>` - Entry's trackback URL.
+    - `<%TrackbackCount%>` - Total number of trackbacks on this entry.
+    - `<%TrackbackRDF%>` - The RDF trackback metadata for this entry.
+    - `<Trackback> </Trackback>` - Displays the trackbacks on this entry.
+      - `<TrackbackDelete> </TrackbackDelete>` - Delete Trackback link.
+      - `<%TrackbackBlogName%>` - The sender's weblog name for this trackback.
+      - `<%TrackbackURL%>` - The sender's weblog URL for this trackback.
+      - `<%TrackbackTitle%>` - Trackback title.
+      - `<%TrackbackExcerpt%>` - Trackback content.
+      - `<%TrackbackDate%>` - Trackback date.
+      - `<%TrackbackTime%>` - Trackback time.
+- `<IfPages> </IfPages>` - Contents will only display if the weblog has more than one page.
+    - `<EarlierLink> </EarlierLink>` - Links the contents to the previous page URL.
+    - `<LaterLink> </LaterLink>` - Links the contents to the next page URL.
+    - `<%CurrentPage%>` - The current page number.
+    - `<%TotalPages%>` - The total number of pages.
