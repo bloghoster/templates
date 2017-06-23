@@ -15,12 +15,17 @@ Any content between them is modified in some way, or looped over and outputted
 multiple times. For example, placing `<Entry><%EntryTitle%></Entry>` in your
 template will display the title of each of your entries.
 
-## Tags & Variables List
+## Tags & Variables List and Descriptions
+
+Below is a full list of the weblog tags and variables available to you:
 
 - `<%WindowTitle%>` - Weblog title and current page title. This tag will output the title of your weblog along with the page that you are viewing. It can be used anywhere in your template, though it is specifically designed to maximize searchability when used between the `<title></title>` tags.
 - `<%Title%>` - Weblog title. This tag will output the title of your weblog, which you specify in your Profile. You can use this anywhere on your template.
 - `<%Description%>` - Weblog description. This tag will output a brief description of your weblog, which you specify in your Profile.
-- `<%Avatar%>` - Weblog owner's avatar URL.
+- `<%Avatar%>` - Weblog owner's avatar URL. This tag will output the URL to the weblog owner's avatar, which he/she specifies on the Edit My Profile page if avatars are allowed. Generally, this is used inside an <img> tag, for example:
+
+    <img src="<%Avatar%>" border="0">
+
 - `<%Email%>` - Weblog owner's email address.
 - `<%Calendar%>` - The blog's calendar.
 - `<%MainPageURL%>` - Weblog's main page URL.
