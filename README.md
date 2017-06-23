@@ -24,7 +24,7 @@ Below is a full list of the weblog tags and variables available to you:
 - `<%Description%>` - Weblog description. This tag will output a brief description of your weblog, which you specify in your Profile.
 - `<%Avatar%>` - Weblog owner's avatar URL. This tag will output the URL to the weblog owner's avatar, which he/she specifies on the Edit My Profile page if avatars are allowed. Generally, this is used inside an <img> tag, for example:
 
-    <img src="<%Avatar%>" border="0">
+    `<img src="<%Avatar%>" alt="">`
 
 - `<%Email%>` - Weblog owner's email address.
 - `<%Calendar%>` - The blog's calendar.
