@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><%WindowTitle%></title>
+<style type="text/css">
+
+p {
+margin: 0px;
+}
+
+body {
+margin: 0px;
+color: #333333;
+}
+
+td {
+font-family: "Palatino Linotype", georgia, arial, sans-serif;
+}
+
+td.topbar {
+background: #EEEEEE;
+padding: 5px;
+padding-left: 10px;
+border-bottom: 1px solid #AAAAAA;
+}
+
+td.entry {
+padding: 10px;
+font-size: 10pt;
+line-height: 16pt;
+}
+
+div.comments {
+margin-top: 5px;
+}
+
+font.title {
+font-size: 12pt;
+font-weight: bold;
+}
+
+font.date {
+font-style: italic;
+}
+
+font.gray {
+text-decoration: none;
+color: #333333;
+}
+
+h2 {
+font-weight: normal;
+font-size: 22pt;
+color: #000000;
+margin: 0px;
+}
+
+h3 {
+font-size: 10pt;
+font-weight: normal;
+color: #000000;
+margin: 0px;
+margin-left: 2px;
+}
+
+a:link { color: #000066; }
+a:visited { color: #000066; }
+a:hover { color: #000066; }
+
+</style>
+</head>
+<body>
+
+<table width='100%' cellpadding='0' cellspacing='0'>
+<tr>
+<td class='topbar'>
+<h2><%Title%></h2>
+<h3><a href='<%MainPageURL%>'>Home</a>  -  <a href='<%ProfileURL%>'>Profile</a>  -  <a href='<%ArchiveURL%>'>Archives</a>  -  <a href='<%FriendsPageURL%>'>Friends</a></h3>
+</td>
+</tr>
+</table>
+
+
+<!-- ARCHIVE PAGE -->
+<IfArchivePage>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='entry'>
+<font class='title'>Archives</font><br>
+<%ArchiveInfo%>
+</td>
+</tr>
+</table>
+</IfArchivePage>
+
+
+<!-- MAIN PAGE -->
+<IfMainPage>
+<Entry>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='entry'>
+<font class='title'><%EntryTitle%></font>
+<font class='date'> - Posted at <%EntryTime%> on <%EntryDate%> by <%EntryAuthor%><IfCategoriesAllowed> in <%EntryCategory%></IfCategoriesAllowed></font><br>
+<%EntryBody%>
+<div class='comments'><IfCommentsAllowed><a href='<%EntryURL%>'><%EntryCommentCount%> Comments</a> <IfCommentPostAllowed> -  <a href='<%CommentPostURL%>'>Post Comment</a></IfCommentPostAllowed>  - </IfCommentsAllowed> <a href='<%EntryURL%>'>Permanent Link</a></div>
+</td>
+</tr>
+</table>
+</Entry>
+</IfMainPage>
+
+
+<!-- ENTRY PAGE -->
+<IfEntryPage>
+<Entry>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='entry'>
+<font class='title'><%EntryTitle%></font>
+<font class='date'> - Posted at <%EntryTime%> on <%EntryDate%> by <%EntryAuthor%></font><br>
+<%EntryBody%>
+<div class='comments'><IfCommentsAllowed><IfCommentPostAllowed><a href='<%CommentPostURL%>'>Post Comment</a></IfCommentPostAllowed></IfCommentsAllowed></div>
+</td>
+</tr>
+</table>
+
+<IfCommentsAllowed>
+<Comment>
+<table cellpadding='0' cellspacing='0' style='margin-left: 30px;'>
+<tr>
+<td class='entry'>
+<font class='title'><%CommentTitle%></font>
+<font class='date'> - Posted at <%CommentTime%> on <%CommentDate%> by <%CommentAuthor%> <%CommentAuthorIP%></font><br>
+<%CommentBody%>
+<div class='comments'><a href='<%CommentURL%>'>Permanent Link</a> <CommentEdit><font class='gray'> - </font>Edit</CommentEdit> <CommentDelete><font class='gray'> - </font>Delete</CommentDelete></div>
+</td>
+</tr>
+</table>
+</Comment>
+</IfCommentsAllowed>
+</Entry>
+</IfEntryPage>
+
+
+<!-- FRIENDS PAGE -->
+<IfFriendsPage>
+<Entry>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='entry'>
+<font class='title'><%EntryTitle%></font>
+<font class='date'> - Posted at <%EntryTime%> on <%EntryDate%> by <%EntryAuthor%><IfCategoriesAllowed> in <%EntryCategory%></IfCategoriesAllowed></font><br>
+<%EntryBody%>
+<div class='comments'><IfCommentsAllowed><a href='<%EntryURL%>'><%EntryCommentCount%> Comments</a> <IfCommentPostAllowed> -  <a href='<%CommentPostURL%>'>Post Comment</a></IfCommentPostAllowed>  - </IfCommentsAllowed> <a href='<%EntryURL%>'>Permanent Link</a></div>
+</td>
+</tr>
+</table>
+</Entry>
+</IfFriendsPage>
+
+
+<IfPages>
+<br>
+<center>
+<table cellpadding='0' cellspacing='0' align='center'>
+<tr><td align='center'>
+<LaterLink>Last Page</LaterLink>  ::  <EarlierLink>Next Page</EarlierLink>
+</td></tr>
+</table>
+</center>
+</IfPages>
+
+</body>
+</html>
