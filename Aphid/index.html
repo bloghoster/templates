@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title><%WindowTitle%></title>
+<style type='text/css'>
+
+body {
+	margin: 0px;
+	background: #222222;
+	text-align: center;
+	color: #DDDDDD;
+	font-family: Georgia, verdana, arial, serif;
+}
+
+td {
+	text-align: left;
+	color: #DDDDDD;
+	font-family: "Trebuchet MS", verdana, arial, serif;
+}
+
+
+td.title {
+	height: 230px;
+	width: 700px;
+	padding: 10px;
+	background-image: url(./images/templates/aphid_title.jpg);
+	border: 3px solid #666666;
+	border-top: none;
+	vertical-align: bottom;
+
+}
+
+td.leftside {
+	background-image: url(./images/templates/aphid_bg.gif);
+	background-repeat: repeat-x;
+	padding: 10px;
+	border: 3px solid #666666;
+	border-top: none;
+	border-right: none;
+	font-size: 8pt;
+	line-height: 20px;
+}
+
+td.rightside {
+	background-image: url(./images/templates/aphid_bg.gif);
+	background-repeat: repeat-x;
+	padding: 10px;
+	border: 3px solid #666666;
+	border-top: none;
+	font-size: 8pt;
+	line-height: 20px;
+}
+
+h1 {
+	margin: 0px;
+	font-size: 24pt;
+	color: #EEEEEE;
+	font-weight: bold;
+	font-family: "Trebuchet MS", verdana, arial, serif;
+}
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: "Trebuchet MS", verdana, arial, serif;
+}
+
+div.avatar {
+	width: 20px;
+	border: 1px solid #555555;
+	padding: 5px;
+	margin-bottom: 10px;
+	margin-top: 3px;
+}
+
+div.timedate {
+	margin-bottom: 5px;
+}
+
+a:link { color: #C8EBB8; text-decoration: none; }
+a:visited { color: #C8EBB8; text-decoration: none; }
+a:hover { color: #EEEEEE; text-decoration: underline; }
+
+a.menu:link { color: #C8EBB8; text-decoration: none; }
+a.menu:visited { color: #C8EBB8; text-decoration: none; }
+a.menu:hover { color: #EEEEEE; text-decoration: underline; font-weight: bold; }
+
+table.calendar { border: 0; background-color: #222222; }
+table.calendar th { height: 10px; font-size: 7pt; text-align: center; border: 0px; }
+table.calendar td { width: 19px; height: 10px; font-size: 8pt; text-align: center; border: 0px; }
+table.calendar .calendar-month { font-weight: bold; margin-top: 3px; font-size: 10pt; text-align: center; }
+table.calendar .calendar-month a { text-decoration: none; }
+table.calendar .calendar-prev { font-weight: normal; }
+table.calendar .calendar-next { font-weight: normal; }
+table.calendar td.linked-day { font-weight: bold; background-color: #222222; }
+table.calendar td.linked-day a { text-decoration: none; }
+table.prevnext { width: 100%; margin-top: .3em; }
+table.prevnext td { font-size: smaller; }
+table.prevnext td a { text-decoration: none; }
+
+</style>
+</head>
+<body>
+
+<table width='700' cellpadding='0' cellspacing='0'>
+<tr><td class='title' colspan='2'><h1><%Title%> </h1></td></tr>
+<tr>
+<td class='leftside' width='550' valign='top'>
+<!-- BEGIN LEFT SIDE -->
+
+
+
+<!-- ARCHIVE PAGE -->
+<IfArchivePage>
+<h2>Archives</h2>
+<%ArchiveInfo%>
+</IfArchivePage>
+
+
+
+<!-- MAIN PAGE --->
+<IfMainPage>
+<Entry>
+
+<h2><%EntryTitle%></h2>
+<div class='timedate'>
+{ <b><%EntryTime%>, <%EntryDate%></b> }  
+<IfCategoriesAllowed>{ Posted in <%EntryCategory%> }  </IfCategoriesAllowed>
+<IfCommentsAllowed>{ <a href='<%EntryURL%>'><%EntryCommentCount%> comments</a> }  </IfCommentsAllowed>
+<IfTrackbacksAllowed>{ <a href='<%EntryURL%>'><%TrackbackCount%> trackbacks</a> }  </IfTrackbacksAllowed>
+{ <a href='<%EntryURL%>'>Link</a> }
+</div>
+<%EntryBody%>
+<br><br>
+
+</Entry>
+</IfMainPage>
+
+
+
+
+
+<!-- ENTRY PAGE -->
+<IfEntryPage>
+<Entry>
+
+<h2><%EntryTitle%></h2>
+<div class='timedate'>
+{ <b><%EntryTime%>, <%EntryDate%></b> }  
+<IfCategoriesAllowed>{ Posted in <%EntryCategory%> }  </IfCategoriesAllowed>
+<IfCommentsAllowed>{ <a href='<%EntryURL%>'><%EntryCommentCount%> comments</a> }  </IfCommentsAllowed>
+<IfTrackbacksAllowed>{ <a href='<%EntryURL%>'><%TrackbackCount%> trackbacks</a> }  </IfTrackbacksAllowed>
+{ <a href='<%EntryURL%>'>Link</a> }
+</div>
+<%EntryBody%>
+<br>
+
+<IfCommentsAllowed><IfCommentPostAllowed>{ <a href='<%CommentPostURL%>'>Post a Comment</a> }  </IfCommentPostAllowed></IfCommentsAllowed><IfTrackbacksAllowed>{ <a href='<%EntryTrackbackURL%>'>Trackback</a> } <%TrackbackRDF%></IfTrackbacksAllowed>
+<br><br>
+
+<blockquote>
+<IfCommentsAllowed>
+<Comment>
+<h2><%CommentTitle%></h2>
+<div class='timedate'>
+{ <b><%CommentTime%>, <%CommentDate%></b> }  
+{ Posted by <%CommentAuthor%> }  
+<CommentEdit>{ Edit }</CommentEdit>  
+<CommentDelete>{ Delete }</CommentDelete>  
+</div>
+<%CommentBody%>
+<br><br>
+</Comment>
+</IfCommentsAllowed>
+
+<IfTrackbacksAllowed>
+<Trackback>
+<h2><%TrackbackTitle%></h2>
+<div class='timedate'>
+{ <b><%TrackbackTime%>, <%TrackbackDate%></b> }  
+{ Posted in <a href='<%TrackbackURL%>'><%TrackbackBlogName%></a> }  
+<TrackbackDelete>{ Delete }</TrackbackDelete>  
+</div>
+<%TrackbackExcerpt%>
+<br><br>
+</Trackback>
+</IfTrackbacksAllowed>
+</blockquote>
+
+</Entry>
+</IfEntryPage>
+
+
+
+<!-- FRIENDS PAGE -->
+<IfFriendsPage>
+<Entry>
+
+<h2><%EntryTitle%></h2>
+<div class='timedate'>
+{ Posted by <a href='<%EntryAuthorURL%>'><%EntryAuthor%></a> }<br>
+{ <b><%EntryTime%>, <%EntryDate%></b> }  
+<IfCategoriesAllowed>{ Posted in <%EntryCategory%> }  </IfCategoriesAllowed>
+<IfCommentsAllowed>{ <a href='<%EntryURL%>'><%EntryCommentCount%> comments</a> }  </IfCommentsAllowed>
+<IfTrackbacksAllowed>{ <a href='<%EntryURL%>'><%TrackbackCount%> trackbacks</a> }  </IfTrackbacksAllowed>
+{ <a href='<%EntryURL%>'>Link</a> }
+</div>
+<%EntryBody%>
+<br><br>
+
+</Entry>
+</IfFriendsPage>
+
+
+
+
+<IfPages>{ <LaterLink>Last Page</LaterLink> }   { Page <%CurrentPage%> of <%TotalPages%> }   { <EarlierLink>Next Page</EarlierLink> }</IfPages>
+
+<!-- END LEFT SIDE -->
+</td>
+<td class='rightside' width='150' valign='top'>
+<!-- BEGIN RIGHT SIDE -->
+
+<h2>About Me</h2>
+<div class='avatar'><img src='<%Avatar%>' border='0'></div>
+
+<a class='menu' href='<%MainPageURL%>'>Home</a><br>
+<a class='menu' href='<%ProfileURL%>'>My Profile</a><br>
+<a class='menu' href='<%ArchiveURL%>'>Archives</a><br>
+<a class='menu' href='<%FriendsPageURL%>'>Friends</a><br>
+<a class='menu' href='<%AlbumURL%>'>My Photo Album</a><br>
+
+
+<br>
+<%Calendar%>
+<br>
+
+
+<h2>Links</h2>
+<Link><a href='<%LinkURL%>'><%LinkTitle%></a><br></Link>
+
+<br>
+
+<h2>Categories</h2>
+<Categories><a href='<%CategoryURL%>'><%Category%></a><br></Categories>
+
+<br>
+
+<h2>Recent Entries</h2>
+<RecentEntry><%RecentEntryTitle%><br></RecentEntry>
+
+<br>
+
+<h2>Friends</h2>
+<Friends><a href='<%FriendURL%>'><%FriendUsername%></a><br></Friends>
+
+<!-- END RIGHT SIDE -->
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
