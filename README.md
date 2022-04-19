@@ -1,5 +1,5 @@
 # Templates
-Here is weblog templates for BeeBlog.org
+Here is weblog templates for Bloghoster.org
 
 ## Tags & Templates Guide
 
